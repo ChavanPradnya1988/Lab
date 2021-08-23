@@ -4,6 +4,8 @@ import { sentenceCase } from 'change-case';
 import { useState } from 'react';
 import plusFill from '@iconify/icons-eva/plus-fill';
 import { Link as RouterLink } from 'react-router-dom';
+
+// import Redirect from 'react-router';
 // material
 import {
   Card,
@@ -24,10 +26,11 @@ import {
 } from '@material-ui/core';
 // components
 import Page from '../components/Page';
+import Blog from './Blog';
 import Label from '../components/Label';
 import Scrollbar from '../components/Scrollbar';
 import SearchNotFound from '../components/SearchNotFound';
-import { UserListHead, UserListToolbar, UserMoreMenu } from '../components/_dashboard/user';
+import { ClientListHead, ClientListToolbar, ClientMoreMenu } from '../components/_dashboard/client';
 //
 import USERLIST from '../_mocks_/user';
 
@@ -73,13 +76,17 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function User() {
+export default function Client() {
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState('asc');
   const [selected, setSelected] = useState([]);
   const [orderBy, setOrderBy] = useState('name');
   const [filterName, setFilterName] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(5);
+  // const history = useHistory();
+  // const handleRoute = () => {
+  //   return <Redirect to="/Login/" />;
+  // };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -137,13 +144,14 @@ export default function User() {
     <Page title="Machine Cutting Oil | Client">
       <Container>
         <Typography variant="h4" gutterBottom>
-          Employee
+          Client
         </Typography>
         <br />
         <Breadcrumbs aria-label="breadcrumb" style={{ alignItems: 'left !important' }}>
           <Link
             color="inherit"
-            href="/Login"
+            path="/dashboard/app"
+            href="./Login"
             onClick={handleClick}
             style={{ textDecoration: 'none', color: '#00AB55' }}
           >
@@ -155,7 +163,7 @@ export default function User() {
             onClick={handleClick}
             style={{ textDecoration: 'none', color: '#00AB55' }}
           >
-            Employee
+            Client
           </Link>
           {/* <Link
               color="textPrimary"
@@ -167,6 +175,7 @@ export default function User() {
             </Link> */}
         </Breadcrumbs>
         <br />
+
         <Stack direction="row" alignItems="right" justifyContent="space-between" mb={5}>
           <Button
             style={{
@@ -175,14 +184,17 @@ export default function User() {
             variant="contained"
             component={RouterLink}
             startIcon={<Icon icon={plusFill} />}
-            to="/dashboard/createuser"
+            to="/dashboard/createemployee"
           >
-            Add New Employee{' '}
+            Add New Client{' '}
           </Button>
         </Stack>
+        {/* <Button component={RouterLink} to="/dashboard/createemployee">
+            Add New Client
+          </Button> */}
 
         <Card>
-          <UserListToolbar
+          <ClientListToolbar
             numSelected={selected.length}
             filterName={filterName}
             onFilterName={handleFilterByName}
@@ -191,7 +203,7 @@ export default function User() {
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
               <Table>
-                <UserListHead
+                <ClientListHead
                   order={order}
                   orderBy={orderBy}
                   headLabel={TABLE_HEAD}
@@ -243,7 +255,7 @@ export default function User() {
                           </TableCell>
 
                           <TableCell align="right">
-                            <UserMoreMenu />
+                            <ClientMoreMenu />
                           </TableCell>
                         </TableRow>
                       );

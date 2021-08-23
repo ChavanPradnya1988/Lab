@@ -8,7 +8,8 @@ import Logo from '../components/Logo';
 
 const HeaderStyle = styled('header')(({ theme }) => ({
   top: 0,
-  left: 0,
+  left: 50,
+  marginLeft: 500,
   lineHeight: 0,
   width: '100%',
   position: 'absolute',

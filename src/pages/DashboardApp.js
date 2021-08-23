@@ -1,5 +1,5 @@
 // material
-import { Box, Grid, Container, Typography } from '@material-ui/core';
+import { Box, Grid, Container, Typography, Breadcrumbs, Link } from '@material-ui/core';
 // components
 import Page from '../components/Page';
 import {
@@ -20,13 +20,43 @@ import {
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
+  function handleClick(event) {
+    event.preventDefault();
+    console.info('You clicked a breadcrumb.');
+  }
   return (
-    <Page title="Dashboard | Minimal-UI">
+    <Page title="Dashboard">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">Hi, Welcome back</Typography>
+          <Typography variant="h4"> Welcome ....</Typography>
+          <Breadcrumbs aria-label="breadcrumb">
+            <Link
+              color="inherit"
+              href="/Login"
+              onClick={handleClick}
+              style={{ textDecoration: 'none', color: '#00AB55' }}
+            >
+              Login
+            </Link>
+            <Link
+              color="inherit"
+              href="/getting-started/installation/"
+              onClick={handleClick}
+              style={{ textDecoration: 'none', color: '#00AB55' }}
+            >
+              Dashboard
+            </Link>
+            {/* <Link
+              color="textPrimary"
+              href="/components/breadcrumbs/"
+              onClick={handleClick}
+              aria-current="page"
+            >
+              Breadcrumb
+            </Link> */}
+          </Breadcrumbs>
         </Box>
-        <Grid container spacing={3}>
+        {/* <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
             <AppWeeklySales />
           </Grid>
@@ -70,8 +100,8 @@ export default function DashboardApp() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppTasks />
-          </Grid>
-        </Grid>
+          </Grid> */}
+        {/* </Grid> */}
       </Container>
     </Page>
   );
