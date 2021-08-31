@@ -48,7 +48,7 @@ export default function AccountPopover() {
   return (
     <>
       <IconButton
-        ref={anchorRef}
+        // ref={anchorRef}
         onClick={handleOpen}
         sx={{
           padding: 0,

@@ -8,7 +8,7 @@ import AuthLayout from '../layouts/AuthLayout';
 import Page from '../components/Page';
 import { MHidden } from '../components/@material-extend';
 import { LoginForm } from '../components/authentication/login';
-import AuthSocial from '../components/authentication/AuthSocial';
+import LogoOnlyLayout from '../layouts/LogoOnlyLayout';
 
 // ----------------------------------------------------------------------
 
@@ -23,17 +23,19 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   maxWidth: 464,
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
-  margin: theme.spacing(2, 0, 2, 2)
+  alignItems: 'center',
+  margin: theme.spacing(10, 0, 2, 2),
+  padding: 20
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
   maxWidth: 480,
-  margin: 'auto',
+  margin: '10',
   display: 'flex',
   minHeight: '100vh',
   flexDirection: 'column',
   justifyContent: 'center',
+  alignItems: 'center',
   padding: theme.spacing(12, 0)
 }));
 
@@ -41,43 +43,29 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function Login() {
   return (
-    <RootStyle title="Login | Minimal-UI">
-      <AuthLayout>
-        Don’t have an account? &nbsp;
-        <Link underline="none" variant="subtitle2" component={RouterLink} to="/register">
-          Get started
-        </Link>
-      </AuthLayout>
-
-      <MHidden width="mdDown">
-        <SectionStyle>
-          <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-            Hi, Welcome Back
-          </Typography>
-          <img src="/static/illustrations/illustration_login.png" alt="login" />
-        </SectionStyle>
-      </MHidden>
-
+    <RootStyle title="Login | Machine Cutting Oil">
       <Container maxWidth="sm">
         <ContentStyle>
-          <Stack sx={{ mb: 5 }}>
-            <Typography variant="h4" gutterBottom>
-              Sign in to Minimal
-            </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography>
-          </Stack>
-          <AuthSocial />
+          <LogoOnlyLayout />
+          <SectionStyle>
+            <Stack sx={{ mb: 5 }}>
+              <Typography sx={{ color: '#00AB55' }} variant="h4" gutterBottom>
+                <center>Sign In</center>
+              </Typography>
 
-          <LoginForm />
+              {/* <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography> */}
+            </Stack>
 
-          <MHidden width="smUp">
-            <Typography variant="body2" align="center" sx={{ mt: 3 }}>
-              Don’t have an account?&nbsp;
-              <Link variant="subtitle2" component={RouterLink} to="register">
-                Get started
-              </Link>
-            </Typography>
-          </MHidden>
+            <LoginForm />
+            <MHidden width="smUp">
+              <Typography variant="body2" align="center" sx={{ mt: 3 }}>
+                Don’t have an account?&nbsp;
+                <Link variant="subtitle2" component={RouterLink} to="register">
+                  Get started
+                </Link>
+              </Typography>
+            </MHidden>
+          </SectionStyle>
         </ContentStyle>
       </Container>
     </RootStyle>
