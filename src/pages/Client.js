@@ -150,20 +150,11 @@ export default function Client() {
         <Breadcrumbs aria-label="breadcrumb" style={{ alignItems: 'left !important' }}>
           <Link
             color="inherit"
-            path="/dashboard/app"
-            href="./Login"
+            href="#"
             onClick={handleClick}
             style={{ textDecoration: 'none', color: '#00AB55' }}
           >
-            Login
-          </Link>
-          <Link
-            color="inherit"
-            href="/getting-started/installation/"
-            onClick={handleClick}
-            style={{ textDecoration: 'none', color: '#00AB55' }}
-          >
-            Client
+            Clients
           </Link>
           {/* <Link
               color="textPrimary"
@@ -184,7 +175,7 @@ export default function Client() {
             variant="contained"
             component={RouterLink}
             startIcon={<Icon icon={plusFill} />}
-            to="/dashboard/createemployee"
+            to="/dashboard/createclient"
           >
             Add New Client{' '}
           </Button>

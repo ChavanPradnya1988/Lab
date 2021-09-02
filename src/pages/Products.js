@@ -87,21 +87,14 @@ export default function EcommerceShop() {
         <Breadcrumbs aria-label="breadcrumb" style={{ alignItems: 'left !important' }}>
           <Link
             color="inherit"
-            path="/dashboard/app"
-            href="./Login"
+            // path="/dashboard/app"
+            href="#"
             onClick={handleClick}
             style={{ textDecoration: 'none', color: '#00AB55' }}
           >
-            Login
+            Products
           </Link>
-          <Link
-            color="inherit"
-            href="/getting-started/installation/"
-            onClick={handleClick}
-            style={{ textDecoration: 'none', color: '#00AB55' }}
-          >
-            Client
-          </Link>
+
           {/* <Link
               color="textPrimary"
               href="/components/breadcrumbs/"

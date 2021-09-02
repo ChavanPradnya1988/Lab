@@ -62,7 +62,7 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   marginLeft: 100,
   marginTop: 20
 }));
-export default function EmployeeForm() {
+export default function UpdateEmployeeForm() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const classes = useStyles();
