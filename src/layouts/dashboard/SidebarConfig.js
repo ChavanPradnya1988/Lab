@@ -19,7 +19,7 @@ const sidebarConfig = [
   },
   {
     title: 'Employee',
-    path: '/dashboard/user',
+    path: '/dashboard/Employee',
     icon: getIcon(peopleFill)
   },
   {

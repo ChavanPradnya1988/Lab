@@ -1,14 +1,16 @@
 // material
-import { Box, Grid, Container, Typography, Breadcrumbs, Link } from '@material-ui/core';
+import { Box, Grid, Container, Breadcrumbs, Link } from '@material-ui/core';
 // components
+// import { sidebarConfig } from '../layouts/dashboard/SidebarConfig';
 import { useState } from 'react';
 import Page from '../components/Page';
-import { ProductForm } from '../components/ProductForm';
+import { ClientForm } from '../components/ClientForm';
+// import { Route } from 'react-router-dom'
+
 // ----------------------------------------------------------------------
-
-export default function CreateProduct() {
+// const path = [...sidebarConfig];
+export default function CreateClient() {
   const [selected, setSelected] = useState([]);
-
   const handleClick = (event, name) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected = [];
@@ -33,23 +35,25 @@ export default function CreateProduct() {
           <Breadcrumbs aria-label="breadcrumb">
             <Link
               color="inherit"
-              href="/dashboard/Products"
+              href="/dashboard/Client"
               onClick={handleClick}
               style={{ textDecoration: 'none', color: '#00AB55' }}
             >
-              Products
+              {/* <Route exact path="/login" /> */}
+              Clients
             </Link>
             <Link
               color="inherit"
+              // to={path}
               href="#"
               onClick={handleClick}
               style={{ textDecoration: 'none', color: '#00AB55' }}
             >
-              CreateProduct
+              CreateClient
             </Link>
           </Breadcrumbs>
 
-          <ProductForm />
+          <ClientForm />
         </Box>
       </Container>
     </Page>

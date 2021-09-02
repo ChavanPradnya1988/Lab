@@ -73,7 +73,7 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function User() {
+export default function Employee() {
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState('asc');
   const [selected, setSelected] = useState([]);
@@ -134,7 +134,7 @@ export default function User() {
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
-    <Page title="Machine Cutting Oil | Client">
+    <Page title="Machine Cutting Oil | Employee">
       <Container>
         <Typography variant="h4" gutterBottom>
           Employee
@@ -143,15 +143,7 @@ export default function User() {
         <Breadcrumbs aria-label="breadcrumb" style={{ alignItems: 'left !important' }}>
           <Link
             color="inherit"
-            href="/Login"
-            onClick={handleClick}
-            style={{ textDecoration: 'none', color: '#00AB55' }}
-          >
-            Login
-          </Link>
-          <Link
-            color="inherit"
-            href="/getting-started/installation/"
+            href="#"
             onClick={handleClick}
             style={{ textDecoration: 'none', color: '#00AB55' }}
           >
@@ -175,7 +167,7 @@ export default function User() {
             variant="contained"
             component={RouterLink}
             startIcon={<Icon icon={plusFill} />}
-            to="/dashboard/createuser"
+            to="/dashboard/createemployee"
           >
             Add New Employee{' '}
           </Button>

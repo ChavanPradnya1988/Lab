@@ -13,7 +13,7 @@ export default function Logo({ sx }) {
     <Box
       component="img"
       src="/static/logo.jpg"
-      sx={{ width: 120, height: 120, ...sx, borderRadius: '50%', border: '1px solid teal' }}
+      sx={{ width: 120, height: 120, ...sx, borderRadius: '50%', border: '1px solid #00AB55' }}
     />
   );
 }
