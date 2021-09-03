@@ -5,11 +5,13 @@ import { combineReducers } from 'redux';
 // import { contentResizedTracker } from '../components/toggler/connect-toggler';
 // import { scrollPosition } from "./state-scroll-position";
 // import { windowSize } from "./state-window-size";
+import { loginFormReducer } from './login/stateLogin';
+
 const allReducers = {
   // ...initialStateReducers,
   // contentRendered,
   // contentResizedTracker,
-  loginData
+  loginFormData: loginFormReducer
   //   scrollPosition,
   //   windowSize
 };
