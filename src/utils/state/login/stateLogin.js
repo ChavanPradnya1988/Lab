@@ -70,19 +70,19 @@ export const loginFormDataActions = {
         }
       })
 };
-const loginFormData = {
+const initialState = {
   loginError: '',
   credentials: {
-    username: '',
+    email: '',
     password: ''
   },
   errors: {
-    username: '',
+    email: '',
     password: ''
   },
   userData: {}
 };
-export function loginFormReducer(state = loginFormData, action) {
+export function loginFormReducer(state = initialState, action) {
   switch (action.type) {
     case types.STORE_LOGIN_FORM_DATA:
       return {
@@ -102,7 +102,7 @@ export function loginFormReducer(state = loginFormData, action) {
       };
     case types.RESET_LOGIN_FORM_DATA:
       return {
-        ...loginFormData
+        ...initialState
       };
     case types.LOGIN_SUCCESS:
       return {
@@ -113,10 +113,12 @@ export function loginFormReducer(state = loginFormData, action) {
       return {
         ...state,
         loginError: action.payload,
-        errors: { ...loginFormData.errors },
-        credentials: { ...loginFormData.credentials }
+        errors: { ...initialState.errors },
+        credentials: { ...initialState.credentials }
       };
     default:
       return state;
   }
 }
+
+// export default { loginFormData };

@@ -31,12 +31,16 @@ export default function LoginForm(props) {
 
   const [showPassword, setShowPassword] = useState(false);
   // email
-  const email1 = useSelector((state) => state.loginFormData.credentials.email);
+  // const email1 = useSelector((state) => state.loginFormData.credentials.email);
+  const email1 = useSelector((state) => {
+    console.log(state);
+  });
   const [email, setEmail] = useState(email1);
   useEffect(() => setEmail(email1), [email1]);
 
   // password
-  const password1 = useSelector((state) => state.loginFormData.credentials.password);
+  // const password1 = useSelector((state) => state.loginFormData.credentials.password);
+  const password1 = useSelector((state) => console.log(state));
   const [password, setPassword] = useState(password1);
   useEffect(() => setPassword(password1), [password1]);
 
@@ -45,7 +49,8 @@ export default function LoginForm(props) {
   const dispatch = useDispatch();
 
   // userDetails
-  const userData1 = useSelector((state) => state.loginFormData.userData);
+  // const userData1 = useSelector((state) => state.loginFormData.userData);
+  const userData1 = useSelector((state) => console.log(state));
   const [userData, setUserData] = useState(userData1);
   useEffect(() => setUserData(userData1), [userData1]);
   console.log(userData1);

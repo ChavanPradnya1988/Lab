@@ -4,12 +4,13 @@ import 'simplebar/src/simplebar.css';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Provider } from 'react-redux';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import store from '../src/utils/state/store';
+
+import store from './utils/state/store';
 
 // ----------------------------------------------------------------------
 
